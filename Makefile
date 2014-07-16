@@ -5,7 +5,7 @@ SRC = ./src
 
 # debug stuff 
 ifeq ($(CFLAG), DEBUG)
-CFLAGS += -g
+	CFLAGS += -g
 endif
 
 AR  = ar -cqs
@@ -23,29 +23,29 @@ SAMPLE_OBJS = $(addprefix $(BIN)/, \
 		)
 		
 # include file path
-# INC = -I. -I.
+INC = -I$(SRC)
 
 TARGETS = $(BIN)/libconhash.a $(BIN)/sample
  
-all : clean prepare $(TARGETS)
+all: clean prepare $(TARGETS)
 
 # build libconhash as a static lib 
-$(BIN)/libconhash.a : $(OBJ) 
+$(BIN)/libconhash.a: $(OBJ) 
 	$(AR) $@ $(OBJ)
 	
 # build sample
-$(BIN)/sample : $(SAMPLE_OBJS)
+$(BIN)/sample: $(SAMPLE_OBJS)
 	gcc -O -o $@ $(SAMPLE_OBJS) -L. -L$(BIN) -lconhash
 
 	
-$(BIN)/%.o : $(SRC)/%.c
+$(BIN)/%.o: $(SRC)/%.c
 	gcc $(INC) $(CFLAGS) -c $< -o $@	
 
 # prepare the bin dir	
-prepare : 
+prepare: 
 		-mkdir $(BIN)
 	  
-clean  :
+clean:
 		-rm -rf $(BIN)
 
 .PHONY: all prepare clean
