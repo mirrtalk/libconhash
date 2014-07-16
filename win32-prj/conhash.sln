@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "conhash", "conhash.vcproj", "{48F181CD-1AA3-4D5C-8004-DE94685BF18D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sample", "sample.vcproj", "{136DDD56-9E8D-41A8-BDAF-5A79D8EAC39C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{48F181CD-1AA3-4D5C-8004-DE94685BF18D} = {48F181CD-1AA3-4D5C-8004-DE94685BF18D}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48F181CD-1AA3-4D5C-8004-DE94685BF18D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{48F181CD-1AA3-4D5C-8004-DE94685BF18D}.Debug|Win32.Build.0 = Debug|Win32
+		{48F181CD-1AA3-4D5C-8004-DE94685BF18D}.Release|Win32.ActiveCfg = Release|Win32
+		{48F181CD-1AA3-4D5C-8004-DE94685BF18D}.Release|Win32.Build.0 = Release|Win32
+		{136DDD56-9E8D-41A8-BDAF-5A79D8EAC39C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{136DDD56-9E8D-41A8-BDAF-5A79D8EAC39C}.Debug|Win32.Build.0 = Debug|Win32
+		{136DDD56-9E8D-41A8-BDAF-5A79D8EAC39C}.Release|Win32.ActiveCfg = Release|Win32
+		{136DDD56-9E8D-41A8-BDAF-5A79D8EAC39C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
