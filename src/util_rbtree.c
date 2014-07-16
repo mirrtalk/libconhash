@@ -6,7 +6,7 @@
 /* the NULL node of tree */
 #define _NULL(rbtree) (&((rbtree)->null))
 
-/* structues uesed to check a rb tree */
+/* structures used to check a rb tree */
 struct rbtree_check_s
 {
     short rbh; /* rb height of the tree */
