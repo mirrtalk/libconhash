@@ -1,6 +1,7 @@
 
 # output path
 BIN = ./bin
+SRC = ./src
 
 # debug stuff 
 ifeq ($(CFLAG), DEBUG)
@@ -22,7 +23,7 @@ SAMPLE_OBJS = $(addprefix $(BIN)/, \
 		)
 		
 # include file path
-INC = -I. -I.
+# INC = -I. -I.
 
 TARGETS = $(BIN)/libconhash.a $(BIN)/sample
  
@@ -34,17 +35,17 @@ $(BIN)/libconhash.a : $(OBJ)
 	
 # build sample
 $(BIN)/sample : $(SAMPLE_OBJS)
-	gcc -O -o $@ $(SAMPLE_OBJS) -L. -L./bin -lconhash
+	gcc -O -o $@ $(SAMPLE_OBJS) -L. -L$(BIN) -lconhash
 
 	
-$(BIN)/%.o : %.c
+$(BIN)/%.o : $(SRC)/%.c
 	gcc $(INC) $(CFLAGS) -c $< -o $@	
 
 # prepare the bin dir	
-.PHONY : prepare	
 prepare : 
 		-mkdir $(BIN)
 	  
-.PHONY : clean
 clean  :
 		-rm -rf $(BIN)
+
+.PHONY: all prepare clean
